@@ -1,0 +1,24 @@
+<h1>Usuários</h1>
+<div class="table-responsive-sm">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Login</th>
+        <th scope="col">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <th scope="row">{{ usuario.codigo }}</th>
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.login }}</td>
+        <td>
+          <button (click)="editar(usuario)" class="btn btn-primary">Editar</button>
+          <button (click)="excluir(usuario.login)" class="btn btn-danger">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
