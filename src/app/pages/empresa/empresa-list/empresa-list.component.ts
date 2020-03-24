@@ -28,11 +28,12 @@ export class EmpresaListComponent implements OnInit {
     this.router.navigate(['/empresas/empresa', empresa]);
   }
 
-  excluir(cnpj) {
+  excluir(empresa: Empresa) {
+    console.log(empresa);
     const confirmado = confirm('Tem certeza que deseja excluir?');
     if (confirmado) {
-      this.empresaService.excluir(cnpj).subscribe(
-        dados => console.log(dados),
+      this.empresaService.excluir(empresa.cnpj).subscribe(
+        () => this.empresas = this.empresas.filter(element => element != empresa),
         (error) => { alert('Falha ao excluir, usuário vinculado'); }
       );
     }

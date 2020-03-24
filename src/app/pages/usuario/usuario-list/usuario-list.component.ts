@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class UsuarioListComponent implements OnInit {
 
-  usuarios: Usuario[];
+  usuarios: Usuario[] = [];
 
   constructor(
     private usuarioService: UsuarioService,
@@ -28,12 +28,12 @@ export class UsuarioListComponent implements OnInit {
     this.router.navigate(['/usuarios/usuario', usuario]);
   }
 
-  excluir(login) {
+  excluir(usuario: Usuario) {
     const confirmado = confirm('Tem certeza que deseja excluir?');
     if (confirmado) {
-      this.usuarioService.excluir(login).subscribe(
-        dados => console.log(dados),
-        (error) => { alert('Falha ao excluir'); }
+      this.usuarioService.excluir(usuario.login).subscribe(
+        () => this.usuarios = this.usuarios.filter(element => element != usuario),
+        (error) => { console.log(error); }
       );
     }
   }

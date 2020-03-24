@@ -75,7 +75,7 @@ export class AuthService {
     return this.http
       .post<Version>(
         `${environment.baseUrl}${this.endPointVersion}`,
-        JSON.stringify(""),
+        JSON.stringify(''),
         this.httpOptions
       )
       .pipe(

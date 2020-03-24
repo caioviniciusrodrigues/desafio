@@ -40,7 +40,9 @@ export class UsuarioService {
       );
   }
 
-  public excluir(login: string) {
+  public excluir(_login: string) {
+    let login = {login: _login}
+    console.log('LOGIN ' + login);
     return this.http.post(`${environment.baseUrl}${this.endPointRemover}`, JSON.stringify(login) , this.httpOptions);
   }
 

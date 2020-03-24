@@ -41,7 +41,8 @@ export class EmpresaService {
     return this.http.post<Empresa[]>(`${environment.baseUrl}${this.endPointList}`, JSON.stringify('') , this.httpOptions);
   }
 
-  public excluir(cnpj: string) {
+  public excluir(_cnpj: string) {
+    let cnpj = {cnpj: _cnpj};
     return this.http.post(`${environment.baseUrl}${this.endPointRemover}`, JSON.stringify(cnpj) , this.httpOptions);
   }
 
