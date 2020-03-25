@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { EmpresaRoutingModule } from './empresa-routing.module';
 import { EmpresaListComponent } from './empresa-list/empresa-list.component';
@@ -22,6 +23,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     Ng2SearchPipeModule,
+    NgxPaginationModule,
     ComponentSharedModule,
     ReactiveFormsModule,
     FormsModule,

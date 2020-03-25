@@ -15,6 +15,10 @@ export class UsuarioListComponent implements OnInit {
 
   filter = '';
 
+  itemsPerPage: number = 10;
+
+  p: number = 1;
+
   constructor(
     private usuarioService: UsuarioService,
     private router: Router

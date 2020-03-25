@@ -15,6 +15,10 @@ export class EmpresaListComponent implements OnInit {
 
   filter = '';
 
+  itemsPerPage: number = 10;
+
+  p: number = 1;
+
   constructor(
     private empresaService: EmpresaService,
     private router: Router
