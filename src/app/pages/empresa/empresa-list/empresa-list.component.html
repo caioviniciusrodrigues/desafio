@@ -1,4 +1,5 @@
 <h1>Empresas</h1>
+<input class="form-control" type="text" placeholder="Pesquise" name="search" [(ngModel)]="filter">
 <button class="btn btn-success mt-3 mb-4" routerLink="/empresas/empresa">+Novo</button>
 <div class="table-responsive-sm">
   <table class="table">
@@ -12,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let empresa of empresas">
+      <tr *ngFor="let empresa of empresas | filter:filter" >
         <th scope="row">{{ empresa.codigo }}</th>
         <td>{{ empresa.razaoSocial }}</td>
         <td>{{ empresa.cnpj }}</td>

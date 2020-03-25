@@ -13,6 +13,8 @@ export class UsuarioListComponent implements OnInit {
 
   usuarios: Usuario[] = [];
 
+  filter = '';
+
   constructor(
     private usuarioService: UsuarioService,
     private router: Router

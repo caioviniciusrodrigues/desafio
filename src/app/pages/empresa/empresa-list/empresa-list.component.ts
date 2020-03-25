@@ -13,6 +13,8 @@ export class EmpresaListComponent implements OnInit {
 
   empresas: Empresa[];
 
+  filter = '';
+
   constructor(
     private empresaService: EmpresaService,
     private router: Router

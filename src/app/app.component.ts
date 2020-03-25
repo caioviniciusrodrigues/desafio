@@ -138,10 +138,17 @@ export class AppComponent implements OnInit {
             this.spinner = false;
             this.sucessoUsuarioNovo = true;
             this.resetFormUsuarioNovo();
+            setTimeout(() => {
+              this.modalUsuarioNovo.nativeElement.click();
+            }, 3000);
           },
           error => {
             this.spinner = false;
             this.erroUsuarioNovo = true;
+            this.resetFormUsuarioNovo();
+            setTimeout(() => {
+              this.modalUsuarioNovo.nativeElement.click();
+            }, 3000);
           }
         );
     }
